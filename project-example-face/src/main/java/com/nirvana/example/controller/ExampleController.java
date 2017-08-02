@@ -1,5 +1,6 @@
 package com.nirvana.example.controller;
 
+import com.github.pagehelper.Page;
 import com.nirvana.example.api.ApiResponseUtils;
 import com.nirvana.example.api.model.request.ExampleRequest;
 import com.nirvana.example.model.user.User;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import javax.validation.Valid;
+import java.util.List;
 
 @RestController
 @RequestMapping("/example")
@@ -29,8 +31,8 @@ public class ExampleController {
 
     @RequestMapping(value = "/user", method = RequestMethod.POST)
     @ApiOperation("获取用户信息")
-    public ApiResponse<User> getUser() {
-        User user = userService.get(1);
+    public ApiResponse<List<User>> getUser() {
+        Page<User> user = userService.get(1, 10);
         return ApiResponseUtils.success(user);
     }
 
