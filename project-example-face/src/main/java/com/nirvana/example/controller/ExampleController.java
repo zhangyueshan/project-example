@@ -1,11 +1,11 @@
 package com.nirvana.example.controller;
 
 import com.github.pagehelper.Page;
-import com.nirvana.example.api.ApiResponseUtils;
 import com.nirvana.example.api.model.request.ExampleRequest;
 import com.nirvana.example.model.user.User;
 import com.nirvana.example.service.user.UserService;
 import com.nirvana.web.common.api.ApiResponse;
+import com.nirvana.web.common.api.ApiResponseUtils;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

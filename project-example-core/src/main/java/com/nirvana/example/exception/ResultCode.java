@@ -1,9 +1,11 @@
 package com.nirvana.example.exception;
 
+import com.nirvana.web.common.api.Result;
+
 /**
  * 返回码。
  */
-public enum ResultCode {
+public enum ResultCode implements Result {
 
     SUCCESS("000000", "成功"),
     FAILURE("999999", "失败");
