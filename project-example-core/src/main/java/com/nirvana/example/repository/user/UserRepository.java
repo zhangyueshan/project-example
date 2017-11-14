@@ -7,6 +7,7 @@ import com.nirvana.example.model.user.User;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
+import java.math.BigDecimal;
 
 @Repository
 public class UserRepository {
@@ -16,6 +17,14 @@ public class UserRepository {
 
     public User get(long id) {
         return userMapper.selectByPrimaryKey(id);
+    }
+
+    public User get(String username) {
+        return userMapper.selectByUsername(username);
+    }
+
+    public int update(BigDecimal balance, String username, BigDecimal oldBalance) {
+        return userMapper.updateBalanceByUsernameAndBalance(balance, username, oldBalance);
     }
 
     public Page<User> get(int page, int size) {

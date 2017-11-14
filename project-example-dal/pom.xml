@@ -11,6 +11,19 @@
 
     <artifactId>project-example-dal</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.nirvana</groupId>
+            <artifactId>nirvana-web-common</artifactId>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.flywaydb/flyway-core -->
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+        </dependency>
+    </dependencies>
+
     <build>
         <finalName>${artifactId}</finalName>
         <plugins>

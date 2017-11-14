@@ -4,18 +4,20 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import org.hibernate.validator.constraints.NotBlank;
 
+import javax.validation.constraints.NotNull;
+
 @ApiModel("示例请求")
 public class ExampleRequest {
 
-    @NotBlank(message = "请求消息不能为空")
-    @ApiModelProperty(value = "请求消息", required = true)
-    private String msg;
+    @NotNull(message = "Id不能为空")
+    @ApiModelProperty(value = "Id", required = true)
+    private Long id;
 
-    public String getMsg() {
-        return msg;
+    public Long getId() {
+        return id;
     }
 
-    public void setMsg(String msg) {
-        this.msg = msg;
+    public void setId(Long id) {
+        this.id = id;
     }
 }
